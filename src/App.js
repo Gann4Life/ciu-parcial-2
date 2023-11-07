@@ -1,9 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import NavigationBar from "./components/core/NavigationBar";
 import ProjectList from "./components/pages/ProjectList";
 import ProjectView from "./components/pages/ProjectView";
 
 function App() {
+
+	const [getProjectView, setProjectView] = useState(-1);
+
 	const templateData = () => {
 		return {
 			projects: [
@@ -15,7 +18,7 @@ function App() {
 					link_1: "https://gann4life.github.io",
 					link_2: "https://github.com/gann4life",
 					category: "REACT",
-					image_url: "img/circle x1024.png",
+					image_url: "./img/circle x1024.png",
 					start_date: "2021-01-01",
 					end_date: "now",
 					work_in_progress: true
@@ -51,20 +54,22 @@ function App() {
 	}
 
 	useEffect(() => {
-		
+		setProjectView(-1);
 	}, [])
 
     return (
 		<div>
 			<NavigationBar />
 
-			{/* <ProjectView
-				project={templateData().projects[0]}
-			/> */}
-			
-			<ProjectList
-				projectList={templateData().projects}
-			/>
+			{getProjectView === -1
+				? <ProjectList
+					projectList={templateData().projects}
+					setProjectView={setProjectView}
+				/>
+				: <ProjectView
+					project={templateData().projects[getProjectView]}
+				/>
+			 }			
 		</div>
   );
 }

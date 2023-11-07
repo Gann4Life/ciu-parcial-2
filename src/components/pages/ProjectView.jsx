@@ -4,13 +4,13 @@ import Image from "react-bootstrap/Image"
 const ProjectView = ({ project }) => {
     return (
         <Container className="text-center">
-            <h1>{project.title} {project.work_in_progress ? "(WIP)" : ""}</h1>
+            <h1>{project.title} {project.work_in_progress ? "(WIP)" : ""}NYA</h1>
             <Image className="h-1 project-banner" src={project.image_url}></Image>
             <hr />
-            <p>{project.description}</p>
+            <p>{ project.description }</p>
 
             <div className="text-muted">
-                <p>{project.start_date} - { project.end_date }</p>
+                <p>{ project.start_date } - { project.end_date }</p>
             </div>
 
             <div className="d-flex justify-content">
