@@ -3,24 +3,27 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 
 
-const ProjectCard = ({ project, setProjectView }) => {
-
+const ProjectCard = ({ project, setView }) => {
 	return (
 		<Card className="my-3">
 			{/* <Card.Img variant="top" src="img/circle x1024.png" /> */}
-			<div className="d-flex">
-				<Image className="w-25 m-3" src={project.image_url}></Image>
-				<div className="container-fluid">
+			<div className="row text-center">
+				<Image className="col w-25 m-3 project-thumbnail" src={project.image}></Image>
+				<div className="col-sm container-fluid">
 					<Card.Body>
-						<Card.Title>{project.title}</Card.Title>
+						<Card.Title>{project.project_title}</Card.Title>
 						<Card.Text>{project.description}</Card.Text>
 					</Card.Body>
+					<div className="text-muted row">
+						{project.highlighted_technologies.map(tech => <p className="col-sm">{tech}</p>)}
+					</div>
 					<Card.Body className="d-flex justify-content-evenly">
-						<Button variant="primary" onClick={setProjectView}>
+						<Button className="container-fluid" variant="primary" onClick={setView}>
 							OPEN
 						</Button>
 						{/* <Button variant="primary">DEMO</Button> */}
 						{/* <Button variant="secondary">SOURCE</Button> */}
+
 					</Card.Body>
 				</div>
 			</div>
