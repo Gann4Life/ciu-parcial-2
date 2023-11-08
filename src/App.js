@@ -7,14 +7,14 @@ import FetchProjects, { username } from "./components/coders-rank/data";
 
 function App() {
 
-	const [getProjectView, setProjectView] = useState(-1);
-	const [projects, setProjects] = useState([]);
+	const [getProjectView, setProjectView] = useState(-1)
+	const [projects, setProjects] = useState([])
 	
 	const projectListView = () => setProjectView(-1);
 
 	const loadProjects = async () => {
-		console.log(await FetchProjects())
 		setProjects(await FetchProjects())
+		console.log(projects);
 	}
 
 	useEffect(() => {
@@ -36,12 +36,7 @@ function App() {
 					project={projects[getProjectView]}
 					goBack={projectListView}
 				/>
-			}	
-			
-			{/* {Data.projects.map((key, project) => {
-				if (key !== getProjectView) return;
-				return <ProjectView project={project}/>
-			})} */}
+			}
 		</div>
   );
 }
