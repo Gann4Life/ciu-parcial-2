@@ -14,16 +14,13 @@ const ProjectCard = ({ project, setView }) => {
 						<Card.Title>{project.project_title}</Card.Title>
 						<Card.Text>{project.description}</Card.Text>
 					</Card.Body>
-					<div className="text-muted row">
+					{/*<div className="text-muted row">
 						{project.highlighted_technologies.map(tech => <p className="col-sm">{tech}</p>)}
-					</div>
+	</div>*/}
 					<Card.Body className="d-flex justify-content-evenly">
 						<Button className="container-fluid" variant="primary" onClick={setView}>
 							OPEN
 						</Button>
-						{/* <Button variant="primary">DEMO</Button> */}
-						{/* <Button variant="secondary">SOURCE</Button> */}
-
 					</Card.Body>
 				</div>
 			</div>

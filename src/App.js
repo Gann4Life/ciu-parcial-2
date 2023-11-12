@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import NavigationBar from "./components/core/NavigationBar";
 import ProjectList from "./components/pages/ProjectList";
 import ProjectView from "./components/pages/ProjectView";
+import NewPost from "./components/pages/NewPost"
 import FetchProjects, { username } from "./components/coders-rank/data";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
 					goBack={projectListView}
 				/>
 			}
+
 		</div>
   );
 }
