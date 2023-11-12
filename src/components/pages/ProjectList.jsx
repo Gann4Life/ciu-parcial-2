@@ -52,9 +52,9 @@ const ProjectList = ({ projectList, setView }) => {
             <hr />
 
             <div className="">
-            {filterTag === "all"
-                ? mapProjectList(projectList)
-                : mapProjectList(filteredProjectList())}
+                {filterTag === "all"
+                    ? mapProjectList(projectList)
+                    : mapProjectList(filteredProjectList())}
             </div>
 
         </Container>

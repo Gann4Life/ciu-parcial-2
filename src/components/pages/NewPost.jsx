@@ -1,8 +1,8 @@
 import { Container } from "react-bootstrap"
 
-const NewPost = () => {
+const NewPost = ({ editableProject, projectIndex, editProject }) => {
     return (
-        <Container>
+        <Container className="bg-white">
             <h1 className="text-center">New post page</h1>
 
             <form action="" method="post">

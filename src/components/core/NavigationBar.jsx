@@ -3,17 +3,17 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-const NavigationBar = () => {
+const NavigationBar = ({ home, uploadProject }) => {
 	return (
 		<Navbar expand="lg" className="bg-body-tertiary">
 			<Container>
-				<Navbar.Brand href="#home">ProjectHUB</Navbar.Brand>
+				<Navbar.Brand>ProjectHUB</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
-						<Nav.Link href="#home">Home</Nav.Link>
-						<Nav.Link href="#link">Link</Nav.Link>
-						<NavDropdown title="Dropdown" id="basic-nav-dropdown">
+						<Nav.Link onClick={home}>My projects</Nav.Link>
+						<Nav.Link onClick={uploadProject}>Upload</Nav.Link>
+						{/*<NavDropdown title="Dropdown" id="basic-nav-dropdown">
 							<NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
 							<NavDropdown.Item href="#action/3.2">
 								Another action
@@ -23,7 +23,7 @@ const NavigationBar = () => {
 							<NavDropdown.Item href="#action/3.4">
 								Separated link
 							</NavDropdown.Item>
-						</NavDropdown>
+	</NavDropdown>*/}
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

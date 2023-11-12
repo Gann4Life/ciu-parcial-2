@@ -7,6 +7,8 @@ import FetchProjects, { username } from "./components/coders-rank/data";
 
 function App() {
 
+	const [currentPage, setPage] = useState("view")
+
 	const [getProjectView, setProjectView] = useState(-1)
 	const [projects, setProjects] = useState([])
 	
@@ -17,26 +19,42 @@ function App() {
 		console.log(projects);
 	}
 
+	const newPost = () => {
+		setPage("post");
+	}
+
+	const viewPosts = () => {
+		setPage("view");
+	}
+
+	const currentView = () => {
+		if(currentPage === "view") return <ProjectList
+			projectList={projects}
+			setView={setProjectView}
+		/>
+
+		if(currentPage === "post") return <NewPost/>
+	}
+	
 	useEffect(() => {
 		loadProjects();
 	}, [])
 
     return (
 		<div className="bg-body-secondary">
-			<NavigationBar />
+			<NavigationBar
+				uploadProject={newPost}
+				home={viewPosts}
+			/>
 	
 			{getProjectView === -1 ?
-				<ProjectList
-					projectList={projects}
-					setView={setProjectView}
-				/>
+				currentView()
 				:
 				<ProjectView
 					project={projects[getProjectView]}
 					goBack={projectListView}
 				/>
 			}
-
 		</div>
   );
 }
