@@ -38,23 +38,24 @@ const ProjectList = ({ projectList, setView }) => {
     }
 
     return (
-        <Container>
+        <Container className="bg-body-tertiary">
 
             <h1 className="text-center">My Projects</h1>
 
+            <hr />
             <div className="d-flex justify-content-end">
-
                 <FilterDropdown
                     tags={uniqueTags()}               
                     setFilterTag={setFilterTag}                         
                 />
             </div>
+            <hr />
 
-            {/* {mapProjectList(projectList)} */}
-
+            <div className="">
             {filterTag === "all"
                 ? mapProjectList(projectList)
                 : mapProjectList(filteredProjectList())}
+            </div>
 
         </Container>
     )

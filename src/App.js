@@ -21,9 +21,9 @@ function App() {
 	}, [])
 
     return (
-		<div>
+		<div className="bg-body-secondary">
 			<NavigationBar />
-			
+	
 			{getProjectView === -1 ?
 				<ProjectList
 					projectList={projects}
