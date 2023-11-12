@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import NavigationBar from "./components/core/NavigationBar";
 import ProjectList from "./components/pages/ProjectList";
 import ProjectView from "./components/pages/ProjectView";
-import Data from "./data";
 import FetchProjects, { username } from "./components/coders-rank/data";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
 	}
 
 	useEffect(() => {
-		// setProjectView(-1);
 		loadProjects();
 	}, [])
 
