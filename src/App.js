@@ -23,6 +23,11 @@ function App() {
 		setPage("post");
 	}
 
+	const editOrAddProject = (data) => {
+		//TODO: Make an existing project editable
+		setProjects(current => [data, ...current])
+	}
+
 	const viewPosts = () => {
 		setPage("view");
 	}
@@ -33,7 +38,7 @@ function App() {
 			setView={setProjectView}
 		/>
 
-		if(currentPage === "post") return <NewPost/>
+		if (currentPage === "post") return <NewPost editOrAddProject={editOrAddProject} />
 	}
 	
 	useEffect(() => {
